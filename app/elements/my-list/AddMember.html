@@ -1,4 +1,6 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../scripts/moment-js.html">
+
 
 <dom-module id="add-member">
   <template>
@@ -145,19 +147,17 @@
           online: Boolean
         },
 
-
         _reset: function () {
-          this.errorText = '';
-          this.$.preview.src = null;
-          this.$.preview.preview = null;
           this.heading = 'Add Member';
-          this.$.merchant.value = '';
-          this.$.total.value = '';
-          this.$.comment.value = '';
-          this.$.date.value = moment().format('YYYY-MM-DD');
-          this.$.receiptupload.setAttribute('required', true);
-          this._resetValidationErrors();
-        }
+        },
+        close: function () {
+          var _this = this;
+          this.async(function () {
+            _this.$.dialog.close();
+          }, 10);
+        },
+        _save: function () {
+        },
       });
     })();
   </script>
