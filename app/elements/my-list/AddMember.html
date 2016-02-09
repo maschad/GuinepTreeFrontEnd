@@ -4,14 +4,42 @@
 
 <dom-module id="add-member">
   <template>
-    <style include="shared-styles">
+    <style is="custom-style">
+      #add-menu {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+      }
+      paper-button.custom{
+        color: white !important;
+        --paper-button-ink-color: var(--paper-pink-a200);
+      }
+
+      paper-button.save{
+        background-color: var(--paper-green-500);
+        color: white;
+        --paper-button-raised-keyboard-focus: {
+          background-color: var(--paper-pink-a200) !important;
+          color: white !important;
+        };
+      }
+      paper-dialog.size-position {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 300px;
+        height: 300px;
+        overflow: auto;
+      }
+
+
     </style>
     <paper-fab icon="add" id="add-menu" onclick="document.querySelector('#addMember').toggle();"></paper-fab>
-    <paper-dialog id="addMember" entry-animation="scale-up-animation" exit-animation="fade-out-animation" modal>
+    <paper-dialog id="addMember" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
         <h2>{{heading}}</h2>
       </div>
       <div class="buttons-layout">
-        <paper-button raised on-tap="_save">Save</paper-button>
+        <paper-button raised on-tap="_save" class="custom save">Save</paper-button>
         <paper-button on-tap="close">Cancel</paper-button>
         <paper-button on-tap="_delete" id="delete">Delete</paper-button>
       </div>
