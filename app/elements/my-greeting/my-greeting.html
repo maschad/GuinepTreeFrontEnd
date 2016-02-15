@@ -16,11 +16,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+      .cafe-header { @apply(--paper-font-headline); }
+      .cafe-light { color: var(--paper-grey-600); }
+      .cafe-location {
+        float: right;
+        font-size: 15px;
+        vertical-align: middle;
+      }
+      .cafe-reserve { color: var(--google-blue-500); }
+      iron-icon.star {
+        --iron-icon-width: 16px;
+        --iron-icon-height: 16px;
+        color: var(--paper-amber-500);
+      }
+      iron-icon.star:last-of-type { color: var(--paper-grey-500); }
     </style>
-    <h2 class="page-title">{{greeting}}</h2>
-    <span class="paper-font-body2">Update text to change the greeting.</span>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
-    <input class="paper-font-body2" value="{{greeting::input}}">
+    <paper-card image="../../images/displays/boats.png">
+      <div class="card-content">
+        <div class="cafe-header">Tech Talk
+          <div class="cafe-location cafe-light">
+            <iron-icon icon="communication:location-on"></iron-icon>
+            <span>Gros Islet, St.Lucia</span>
+          </div>
+        </div>
+        <p>Technology</p>
+        <p class="cafe-light">A talk on entrepeneurship and development in the Caribbean.</p>
+      </div>
+      <div class="card-actions">
+        <p>Tonight's availability</p>
+        <div class="horizontal justified">
+          <paper-icon-button icon="icons:event"></paper-icon-button>
+          <paper-button>9:30AM</paper-button>
+        </div>
+        <paper-button class="cafe-reserve">Reserve</paper-button>
+      </div>
+    </paper-card>
   </template>
 
   <script>
@@ -29,14 +59,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       Polymer({
         is: 'my-greeting',
-
-        properties: {
-          greeting: {
-            type: String,
-            value: 'Welcome!',
-            notify: true
-          }
-        }
       });
     })();
   </script>

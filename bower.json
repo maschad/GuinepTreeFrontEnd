@@ -9,13 +9,15 @@
     "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
     "polymer": "Polymer/polymer#^1.2.0",
     "paper-menu": "PolymerElements/paper-menu#4fecb43601",
-    "moment": "^2.11.2"
+    "moment": "^2.11.2",
+    "paper-card": "PolymerElements/paper-card#^1.1.1"
   },
   "devDependencies": {
     "web-component-tester": "*"
   },
   "ignore": [],
   "resolutions": {
-    "paper-menu": "4fecb43601"
+    "paper-menu": "4fecb43601",
+    "iron-image": "^1.2.0"
   }
 }
